@@ -1,0 +1,26 @@
+{
+  "competidores": [
+    {
+      "id": 1,
+      "nome": "Teste",
+      "sexo": "Masculino",
+      "TemperaturaMediaCorpo": "36",
+      "Peso": "92",
+      "Altura": "182"
+    }
+  ],
+  "HistoricoCorrida": [
+    {
+      "Competidorid": 1,
+      "PistaCorridaid": 1,
+      "DataCorrida": "21/07/2021",
+      "TempoGasto": 300
+    }
+  ],
+  "PistaCorrida": [
+    {
+      "id": 1,
+      "Descricao": "Avenida tal da cidade tal"
+    }
+  ]
+}

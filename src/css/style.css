@@ -1,0 +1,108 @@
+@font-face { font-family: RedSeven; src: url('/lib/fonts/Red Seven.otf'); }
+.container{
+    width: 100%;
+}
+.containerMenu{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(97, 119, 243);
+}
+
+.fas {
+    margin-top: 2.5%;
+    font-size: 40px;
+    padding-left: 20px;
+   
+}
+
+.logoName{
+    margin-top: 4.5%;
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: RedSeven
+
+}
+
+.containerLogo{
+    display: flex;
+}
+.menuBar{
+    display: flex;
+}
+.btnComp{
+    font-size: 20px;
+    margin-left: 780%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    font-weight: 500;
+    border-radius: 5%;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(45deg, #93e9c8 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+    cursor: pointer;
+   
+  }
+  .btnComp:hover {
+    background-position: 0;
+}
+ @media screen and (max-width: 1000px) {
+    .btnComp {
+      margin-left:130%;
+    }
+  }
+
+.btnCompetitors{
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.formControl{
+    text-align: center;
+}
+
+.containerForm{
+    text-align: center;
+    width: 500px;
+    height: 350px;
+    border-radius: 3%;
+    margin-top: 4%;
+    margin-left:37%;
+    background-color: rgb(129, 145, 231);
+}
+
+.btnSend{
+    margin-top: 3%;
+    font-weight: 550;
+    font-size: 20px;
+    border-style:hidden;
+    border-radius: 10%;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(45deg, #93e9c8 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.btnSend:hover{
+    background-position: 0;
+}
+
+.lblRegister{
+    margin-left: 0%;
+}
+
+.btnRegisterOn{
+    margin-top: 2%;
+    margin-right: 3%;
+}
+.btnEditOn{
+    margin-right: 3%;
+}
+
+.btnRemoveOn{
+}
