@@ -27,6 +27,6 @@ Abaixo, seguem os requisitos funcionais do desafio a serem cumpridos:
 ## Requisitos não funcionais
 Abaixo, seguem os requisitos não funcionais a serem cumpridos:
 
-* [ ] O Backend deverá ser via REST API (Pode ser realizado utilizando json.server);
+* [x] O Backend deverá ser via REST API (Pode ser realizado utilizando json.server);
 
-* [ ] O Frontend deve ser feito via ReactJS.
+* [x] O Frontend deve ser feito via ReactJS.
