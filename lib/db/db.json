@@ -7,6 +7,14 @@
       "TemperaturaMediaCorpo": "36",
       "Peso": "92",
       "Altura": "182"
+    },
+    {
+      "nome": "teste",
+      "sexo": "Masculino",
+      "TemperaturaMediaCorpo": "0.0",
+      "Peso": "0.00",
+      "Altura": "0.00",
+      "id": 2
     }
   ],
   "HistoricoCorrida": [

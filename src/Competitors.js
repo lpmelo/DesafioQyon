@@ -7,20 +7,56 @@ class Competitors extends Component {
         this.state = {
             nome: '',
             sexo: 'Masculino',
-            temperaturaMediaCorpo: 0.0,
-            peso: 0.00,
-            altura: 0.00
+            temperaturaMediaCorpo: '0.0',
+            peso: '0.00',
+            altura: '0.00',
+            dataJson:[]
         };
         this.sendValue = this.sendValue.bind(this);
+        this.getApiData = this.getApiData.bind(this);
     }
 
     hideShow(element) {
         element = document.getElementById(element);
-        if (element.style.display === 'none') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
+        let option = element.id;
+        switch (option) {
+            case ("register"):
+                document.getElementById('edit').style.display = 'none';
+                if (element.style.display === 'none') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+                break;
+            case ("edit"):
+                document.getElementById('register').style.display = 'none';
+                this.getApiData();
+                if (element.style.display === 'none') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+                break;
         }
+    }
+    getApiData(){
+        let data = [];
+        axios.get("http://localhost:3000/competidores").then(res=>{
+            this.setState({dataJson: res.data})
+        });
+        data = this.state.dataJson;
+        let dropdown = document.getElementById('dropdownEdit');
+        dropdown.length = 0;
+        let defaultOption = document.createElement('option');
+        defaultOption.text = "-- Selecione um Id --"
+        dropdown.add(defaultOption);
+        dropdown.selectedIndex = 0;
+        let option;
+        for(let i = 0; i< data.length; i++){
+             option = document.createElement('option');
+           option.text = data[i].id;
+             dropdown.add(option);
+         }
     }
     sendValue() {
         const data = {
@@ -41,7 +77,7 @@ class Competitors extends Component {
             <div className='formControl comp'>
                 <div className='btnOption'>
                     <button className='btnRegisterOn' onClick={() => this.hideShow('register')}>Cadastrar</button>
-                    <button className='btnEditOn' onClick={()=> this.hideShow('edit')}>Editar</button>
+                    <button className='btnEditOn' onClick={() => this.hideShow('edit')}>Editar</button>
                     <button className='btnRemoveOn'>Remover</button>
                 </div>
                 <div className='containerForm'>
@@ -77,10 +113,9 @@ class Competitors extends Component {
                         <button className='btnSend' onClick={this.sendValue}>Enviar</button>
                     </div>
                     <div className='editForm' id='edit' style={defaultVisible}>
-                    <h3>Editar Competidores</h3>
-                    <select>
-                        <option>teste</option>
-                    </select>
+                        <h3>Editar Competidores</h3>
+                        <select id='dropdownEdit'>
+                        </select>
                     </div>
                 </div>
             </div>
